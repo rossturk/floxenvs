@@ -1,0 +1,8 @@
+git submodule add --name  jupyter-samples https://github.com/ibm-et/jupyter-samples.git ibm-examples
+git submodule add --name  ipynb_playground https://github.com/julienr/ipynb_playground.git julienr-examples
+git submodule add --name  odewahn-examples https://github.com/odewahn/ipynb-examples.git odewahn-examples
+git submodule add --name  biolab https://github.com/biolab/ipynb.git biolab
+git submodule add --name  linnarsson-lab https://github.com/linnarsson-lab/ipynb-lamanno2016.git linnarsson-lab
+git submodule add --name  cse6040 https://github.com/grace828822/cse6040-ipynbs.git cse6040
+git submodule add --name  csss-labs https://github.com/thomas-haslwanter/CSS_ipynb.git csss-labs
+git submodule add --name  prooffreader https://github.com/Prooffreader/Misc_ipynb.git prooffreader

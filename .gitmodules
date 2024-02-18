@@ -1,0 +1,24 @@
+[submodule "jupyter-samples"]
+	path = nb/ibm-examples
+	url = https://github.com/ibm-et/jupyter-samples.git
+[submodule "ipynb_playground"]
+	path = nb/julienr-examples
+	url = https://github.com/julienr/ipynb_playground.git
+[submodule "odewahn-examples"]
+	path = nb/odewahn-examples
+	url = https://github.com/odewahn/ipynb-examples.git
+[submodule "biolab"]
+	path = nb/biolab
+	url = https://github.com/biolab/ipynb.git
+[submodule "linnarsson-lab"]
+	path = nb/linnarsson-lab
+	url = https://github.com/linnarsson-lab/ipynb-lamanno2016.git
+[submodule "cse6040"]
+	path = nb/cse6040
+	url = https://github.com/grace828822/cse6040-ipynbs.git
+[submodule "csss-labs"]
+	path = nb/csss-labs
+	url = https://github.com/thomas-haslwanter/CSS_ipynb.git
+[submodule "prooffreader"]
+	path = nb/prooffreader
+	url = https://github.com/Prooffreader/Misc_ipynb.git

@@ -1,0 +1,982 @@
+{
+  "lockfile-version": 0,
+  "manifest": {
+    "hook": {
+      "script": "\t# If we see a requirements.txt file, install its contents\n\t# into a virtual environment\n\n\n        if [ -f requirements.txt ]; then\n\t\techo -n \"🐍 Processing requirements.txt...\"\n        \t[ ! -d $virtualEnv ] && python -m venv $virtualEnv\n        \t. $virtualEnv/bin/activate\n        \tpip3 -qq install -r requirements.txt\n\t\techo \"done.\"\n\tfi\n\n\t# Set an alias to start the notebook and educate the user\n\n\talias nb=\"jupyter notebook --ip 0.0.0.0\"\n        echo \"✅ Jupyter environment ready - start notebook with alias 'nb'.\"\n\n"
+    },
+    "install": {
+      "folium": {
+        "pkg-path": "python311Packages.folium"
+      },
+      "jupyter": {
+        "pkg-path": "jupyter-all"
+      },
+      "matplotlib": {
+        "pkg-path": "python311Packages.matplotlib"
+      },
+      "numpy": {
+        "pkg-path": "python311Packages.numpy"
+      },
+      "pandas": {
+        "pkg-path": "python311Packages.pandas"
+      },
+      "pyarrow": {
+        "pkg-path": "python311Packages.pyarrow"
+      },
+      "pycrypto": {
+        "pkg-path": "python311Packages.pycrypto"
+      },
+      "pydot": {
+        "pkg-path": "python311Packages.pydot"
+      },
+      "scikit-fuzzy": {
+        "pkg-path": "python311Packages.scikit-fuzzy"
+      },
+      "scikit-image": {
+        "pkg-path": "python311Packages.scikit-image"
+      },
+      "scikit-learn": {
+        "pkg-path": "python311Packages.scikit-learn"
+      },
+      "scikit-misc": {
+        "pkg-path": "python311Packages.scikit-misc"
+      },
+      "seaborn": {
+        "pkg-path": "python311Packages.seaborn"
+      },
+      "statsmodels": {
+        "pkg-path": "python311Packages.statsmodels"
+      },
+      "sympy": {
+        "pkg-path": "python311Packages.sympy"
+      }
+    },
+    "options": {
+      "systems": [
+        "x86_64-linux",
+        "aarch64-darwin"
+      ]
+    },
+    "registry": {
+      "defaults": {
+        "subtrees": null
+      },
+      "inputs": {
+        "nixpkgs": {
+          "from": {
+            "owner": "NixOS",
+            "ref": "release-23.11",
+            "repo": "nixpkgs",
+            "type": "github"
+          },
+          "subtrees": [
+            "legacyPackages"
+          ]
+        }
+      },
+      "priority": [
+        "nixpkgs"
+      ]
+    },
+    "vars": {
+      "virtualEnv": "./nb-venv/"
+    }
+  },
+  "packages": {
+    "aarch64-darwin": {
+      "folium": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "folium"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Make beautiful maps with Leaflet.js & Python",
+          "license": null,
+          "pname": "folium",
+          "unfree": false,
+          "version": "0.15.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "jupyter": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "jupyter-all"
+        ],
+        "info": {
+          "broken": false,
+          "description": "A high-level dynamically-typed programming language",
+          "license": "Python-2.0",
+          "pname": "python3",
+          "unfree": false,
+          "version": "3.11.6-env"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "matplotlib": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "matplotlib"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Python plotting library, making publication quality plots",
+          "license": null,
+          "pname": "matplotlib",
+          "unfree": false,
+          "version": "3.8.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "numpy": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "numpy"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Scientific tools for Python",
+          "license": "BSD-3-Clause",
+          "pname": "numpy",
+          "unfree": false,
+          "version": "1.26.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "pandas": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "pandas"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Powerful data structures for data analysis, time series, and statistics",
+          "license": "BSD-3-Clause",
+          "pname": "pandas",
+          "unfree": false,
+          "version": "2.1.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "pyarrow": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "pyarrow"
+        ],
+        "info": {
+          "broken": false,
+          "description": "A cross-language development platform for in-memory data",
+          "license": "Apache-2.0",
+          "pname": "pyarrow",
+          "unfree": false,
+          "version": "14.0.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "pycrypto": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "pycrypto"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Drop-in replacement for pycrypto using pycryptodome",
+          "license": null,
+          "pname": "pycrypto",
+          "unfree": false,
+          "version": "3.18.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "pydot": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "pydot"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Allows to create both directed and non directed graphs from Python",
+          "license": "MIT",
+          "pname": "pydot",
+          "unfree": false,
+          "version": "1.4.2"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "scikit-fuzzy": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "scikit-fuzzy"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Fuzzy logic toolkit for scientific Python",
+          "license": "BSD-3-Clause",
+          "pname": "scikit-fuzzy",
+          "unfree": false,
+          "version": "unstable-2022-11-07"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "scikit-image": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "scikit-image"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Image processing routines for SciPy",
+          "license": "BSD-3-Clause",
+          "pname": "scikit-image",
+          "unfree": false,
+          "version": "0.21.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "scikit-learn": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "scikit-learn"
+        ],
+        "info": {
+          "broken": false,
+          "description": "A set of python modules for machine learning and data mining",
+          "license": "BSD-3-Clause",
+          "pname": "scikit-learn",
+          "unfree": false,
+          "version": "1.3.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "scikit-misc": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "scikit-misc"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Miscellaneous tools for scientific computing",
+          "license": "BSD-3-Clause",
+          "pname": "scikit-misc",
+          "unfree": false,
+          "version": "0.3.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "seaborn": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "seaborn"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Statistical data visualization",
+          "license": null,
+          "pname": "seaborn",
+          "unfree": false,
+          "version": "0.13.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "statsmodels": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "statsmodels"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Statistical computations and models for use with SciPy",
+          "license": "BSD-3-Clause",
+          "pname": "statsmodels",
+          "unfree": false,
+          "version": "0.14.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "sympy": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "sympy"
+        ],
+        "info": {
+          "broken": false,
+          "description": "A Python library for symbolic mathematics",
+          "license": "BSD-3-Clause",
+          "pname": "sympy",
+          "unfree": false,
+          "version": "1.12"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      }
+    },
+    "x86_64-linux": {
+      "folium": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "folium"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Make beautiful maps with Leaflet.js & Python",
+          "license": null,
+          "pname": "folium",
+          "unfree": false,
+          "version": "0.15.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "jupyter": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "jupyter-all"
+        ],
+        "info": {
+          "broken": false,
+          "description": "A high-level dynamically-typed programming language",
+          "license": "Python-2.0",
+          "pname": "python3",
+          "unfree": false,
+          "version": "3.11.6-env"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "matplotlib": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "matplotlib"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Python plotting library, making publication quality plots",
+          "license": null,
+          "pname": "matplotlib",
+          "unfree": false,
+          "version": "3.8.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "numpy": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "numpy"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Scientific tools for Python",
+          "license": "BSD-3-Clause",
+          "pname": "numpy",
+          "unfree": false,
+          "version": "1.26.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "pandas": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "pandas"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Powerful data structures for data analysis, time series, and statistics",
+          "license": "BSD-3-Clause",
+          "pname": "pandas",
+          "unfree": false,
+          "version": "2.1.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "pyarrow": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "pyarrow"
+        ],
+        "info": {
+          "broken": false,
+          "description": "A cross-language development platform for in-memory data",
+          "license": "Apache-2.0",
+          "pname": "pyarrow",
+          "unfree": false,
+          "version": "14.0.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "pycrypto": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "pycrypto"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Drop-in replacement for pycrypto using pycryptodome",
+          "license": null,
+          "pname": "pycrypto",
+          "unfree": false,
+          "version": "3.18.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "pydot": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "pydot"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Allows to create both directed and non directed graphs from Python",
+          "license": "MIT",
+          "pname": "pydot",
+          "unfree": false,
+          "version": "1.4.2"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "scikit-fuzzy": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "scikit-fuzzy"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Fuzzy logic toolkit for scientific Python",
+          "license": "BSD-3-Clause",
+          "pname": "scikit-fuzzy",
+          "unfree": false,
+          "version": "unstable-2022-11-07"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "scikit-image": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "scikit-image"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Image processing routines for SciPy",
+          "license": "BSD-3-Clause",
+          "pname": "scikit-image",
+          "unfree": false,
+          "version": "0.21.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "scikit-learn": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "scikit-learn"
+        ],
+        "info": {
+          "broken": false,
+          "description": "A set of python modules for machine learning and data mining",
+          "license": "BSD-3-Clause",
+          "pname": "scikit-learn",
+          "unfree": false,
+          "version": "1.3.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "scikit-misc": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "scikit-misc"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Miscellaneous tools for scientific computing",
+          "license": "BSD-3-Clause",
+          "pname": "scikit-misc",
+          "unfree": false,
+          "version": "0.3.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "seaborn": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "seaborn"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Statistical data visualization",
+          "license": null,
+          "pname": "seaborn",
+          "unfree": false,
+          "version": "0.13.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "statsmodels": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "statsmodels"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Statistical computations and models for use with SciPy",
+          "license": "BSD-3-Clause",
+          "pname": "statsmodels",
+          "unfree": false,
+          "version": "0.14.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "sympy": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "sympy"
+        ],
+        "info": {
+          "broken": false,
+          "description": "A Python library for symbolic mathematics",
+          "license": "BSD-3-Clause",
+          "pname": "sympy",
+          "unfree": false,
+          "version": "1.12"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      }
+    }
+  },
+  "registry": {
+    "defaults": {
+      "subtrees": null
+    },
+    "inputs": {
+      "nixpkgs": {
+        "from": {
+          "lastModified": 1708053705,
+          "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+          "owner": "NixOS",
+          "repo": "nixpkgs",
+          "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+          "type": "github"
+        },
+        "subtrees": [
+          "legacyPackages"
+        ]
+      }
+    },
+    "priority": [
+      "nixpkgs"
+    ]
+  }
+}
