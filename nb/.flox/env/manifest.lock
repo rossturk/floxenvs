@@ -2,14 +2,26 @@
   "lockfile-version": 0,
   "manifest": {
     "hook": {
-      "script": "\t# If we see a requirements.txt file, install its contents\n\t# into a virtual environment\n\n\n        if [ -f requirements.txt ]; then\n\t\techo -n \"🐍 Processing requirements.txt...\"\n        \t[ ! -d $virtualEnv ] && python -m venv $virtualEnv\n        \t. $virtualEnv/bin/activate\n        \tpip3 -qq install -r requirements.txt\n\t\techo \"done.\"\n\tfi\n\n\t# Set an alias to start the notebook and educate the user\n\n\talias nb=\"jupyter notebook --ip 0.0.0.0\"\n        echo \"✅ Jupyter environment ready - start notebook with alias 'nb'.\"\n\n"
+      "script": "        if [[ -d $virtualEnv ]]; then\n       \t\techo; echo -n \"⚡️ Activating existing venv in $virtualEnv...\"\n        \t. $virtualEnv/bin/activate\n\t\techo \"done.\"\n\tfi\n\n\t# If we see a requirements.txt file, install its contents\n\t# into a virtual environment\n\n        if [[ -f requirements.txt ]]; then\n\t\techo -n \"🐍 Processing requirements.txt...\"\n        \t[ ! -d $virtualEnv ] && python -m venv $virtualEnv\n        \t. $virtualEnv/bin/activate\n        \tpip3 -qq install -r requirements.txt\n\t\techo \"done.\"\n\tfi\n\n\t# Set an alias to start the notebook and educate the user\n\n\talias nb=\"jupyter notebook --ip 0.0.0.0\"\n        echo; echo \"Jupyter environment ready - start notebook with alias 'nb'.\"\n\n"
     },
     "install": {
+      "biopython": {
+        "pkg-path": "python311Packages.biopython"
+      },
+      "bokeh": {
+        "pkg-path": "python311Packages.bokeh"
+      },
       "folium": {
         "pkg-path": "python311Packages.folium"
       },
+      "ftfy": {
+        "pkg-path": "python311Packages.ftfy"
+      },
       "jupyter": {
         "pkg-path": "jupyter-all"
+      },
+      "keras": {
+        "pkg-path": "python311Packages.keras"
       },
       "matplotlib": {
         "pkg-path": "python311Packages.matplotlib"
@@ -19,6 +31,9 @@
       },
       "pandas": {
         "pkg-path": "python311Packages.pandas"
+      },
+      "plotly": {
+        "pkg-path": "python311Packages.plotly"
       },
       "pyarrow": {
         "pkg-path": "python311Packages.pyarrow"
@@ -49,6 +64,12 @@
       },
       "sympy": {
         "pkg-path": "python311Packages.sympy"
+      },
+      "tensorflow-bin": {
+        "pkg-path": "python311Packages.tensorflow-bin"
+      },
+      "xmltodict": {
+        "pkg-path": "python311Packages.xmltodict"
       }
     },
     "options": {
@@ -84,6 +105,64 @@
   },
   "packages": {
     "aarch64-darwin": {
+      "biopython": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "biopython"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Python library for bioinformatics",
+          "license": "BSD-3-Clause",
+          "pname": "biopython",
+          "unfree": false,
+          "version": "1.81"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "bokeh": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "bokeh"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Statistical and novel interactive HTML plots for Python",
+          "license": "BSD-3-Clause",
+          "pname": "bokeh",
+          "unfree": false,
+          "version": "3.2.2"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
       "folium": {
         "attr-path": [
           "legacyPackages",
@@ -113,6 +192,35 @@
         },
         "priority": 5
       },
+      "ftfy": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "ftfy"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Given Unicode text, make its representation consistent and possibly less broken",
+          "license": "MIT",
+          "pname": "ftfy",
+          "unfree": false,
+          "version": "6.1.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
       "jupyter": {
         "attr-path": [
           "legacyPackages",
@@ -126,6 +234,35 @@
           "pname": "python3",
           "unfree": false,
           "version": "3.11.6-env"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "keras": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "keras"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Deep Learning library for Theano and TensorFlow",
+          "license": "MIT",
+          "pname": "keras",
+          "unfree": false,
+          "version": "2.14.0"
         },
         "input": {
           "attrs": {
@@ -213,6 +350,35 @@
           "pname": "pandas",
           "unfree": false,
           "version": "2.1.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "plotly": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "plotly"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Python plotting library for collaborative, interactive, publication-quality graphs",
+          "license": null,
+          "pname": "plotly",
+          "unfree": false,
+          "version": "5.16.1"
         },
         "input": {
           "attrs": {
@@ -503,6 +669,64 @@
           "pname": "sympy",
           "unfree": false,
           "version": "1.12"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "tensorflow-bin": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "tensorflow-bin"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Computation using data flow graphs for scalable machine learning",
+          "license": "Apache-2.0",
+          "pname": "tensorflow",
+          "unfree": false,
+          "version": "2.13.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "xmltodict": {
+        "attr-path": [
+          "legacyPackages",
+          "aarch64-darwin",
+          "python311Packages",
+          "xmltodict"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Makes working with XML feel like you are working with JSON",
+          "license": "MIT",
+          "pname": "xmltodict",
+          "unfree": false,
+          "version": "0.13.0"
         },
         "input": {
           "attrs": {
@@ -520,6 +744,64 @@
       }
     },
     "x86_64-linux": {
+      "biopython": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "biopython"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Python library for bioinformatics",
+          "license": "BSD-3-Clause",
+          "pname": "biopython",
+          "unfree": false,
+          "version": "1.81"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "bokeh": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "bokeh"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Statistical and novel interactive HTML plots for Python",
+          "license": "BSD-3-Clause",
+          "pname": "bokeh",
+          "unfree": false,
+          "version": "3.2.2"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
       "folium": {
         "attr-path": [
           "legacyPackages",
@@ -549,6 +831,35 @@
         },
         "priority": 5
       },
+      "ftfy": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "ftfy"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Given Unicode text, make its representation consistent and possibly less broken",
+          "license": "MIT",
+          "pname": "ftfy",
+          "unfree": false,
+          "version": "6.1.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
       "jupyter": {
         "attr-path": [
           "legacyPackages",
@@ -562,6 +873,35 @@
           "pname": "python3",
           "unfree": false,
           "version": "3.11.6-env"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "keras": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "keras"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Deep Learning library for Theano and TensorFlow",
+          "license": "MIT",
+          "pname": "keras",
+          "unfree": false,
+          "version": "2.14.0"
         },
         "input": {
           "attrs": {
@@ -649,6 +989,35 @@
           "pname": "pandas",
           "unfree": false,
           "version": "2.1.1"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "plotly": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "plotly"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Python plotting library for collaborative, interactive, publication-quality graphs",
+          "license": null,
+          "pname": "plotly",
+          "unfree": false,
+          "version": "5.16.1"
         },
         "input": {
           "attrs": {
@@ -939,6 +1308,64 @@
           "pname": "sympy",
           "unfree": false,
           "version": "1.12"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "tensorflow-bin": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "tensorflow-bin"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Computation using data flow graphs for scalable machine learning",
+          "license": "Apache-2.0",
+          "pname": "tensorflow",
+          "unfree": false,
+          "version": "2.13.0"
+        },
+        "input": {
+          "attrs": {
+            "lastModified": 1708053705,
+            "narHash": "sha256-K6kCu54cOM3zSUkVmfB9zPqWyKFpEkMkDLbRl9sxES4=",
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "0ed7136921ea094c771db674c9d2566b14852a01",
+            "type": "github"
+          },
+          "fingerprint": "2843a5a201eb392491df3bd1b98261fb1192c380c85bbee8d5dae770566da53e",
+          "url": "github:NixOS/nixpkgs/0ed7136921ea094c771db674c9d2566b14852a01"
+        },
+        "priority": 5
+      },
+      "xmltodict": {
+        "attr-path": [
+          "legacyPackages",
+          "x86_64-linux",
+          "python311Packages",
+          "xmltodict"
+        ],
+        "info": {
+          "broken": false,
+          "description": "Makes working with XML feel like you are working with JSON",
+          "license": "MIT",
+          "pname": "xmltodict",
+          "unfree": false,
+          "version": "0.13.0"
         },
         "input": {
           "attrs": {
